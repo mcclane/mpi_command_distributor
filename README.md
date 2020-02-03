@@ -6,7 +6,7 @@ This is being developed to screen about 7 million potential malaria drugs on Cal
 s MPAC and DIRAC clusters.
 
 ## Requirements
-- A cluster with an MPI implementation installed. This is currently being developed on OpenMPI.
+- A cluster with an MPI implementation installed. This is currently being developed on the MPAC cluster with OpenMPI installed.
 - python3
     + mpi4py
 
