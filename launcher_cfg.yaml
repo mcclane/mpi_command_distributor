@@ -1,0 +1,18 @@
+name: MPAC cluster MPI configuration
+
+hosts:
+    - 127x15.csc.calpoly.edu
+    - 127x14.csc.calpoly.edu
+    - 127x13.csc.calpoly.edu
+    - 127x12.csc.calpoly.edu
+    - 127x10.csc.calpoly.edu
+
+processes-per-node: 2
+
+# Don't like it here
+python: python3.4
+
+mpiexec-path: /usr/lib64/openmpi/bin/mpiexec
+mpi-args:
+    - --mca plm_rsh_no_tree_spawn 1
+    - --mca btl_tcp_if_include ens6f0

@@ -42,6 +42,7 @@ class Manager:
         print("Master done")
 
     def manage(self):
+        MPI.COMM_WORLD.Barrier()
         status = MPI.Status()
         with open(self.args['command_file']) as command_file:
             nextline = command_file.readline()
@@ -64,10 +65,12 @@ class Manager:
                     dest=status.Get_source()
                 )
         self.stop_workers()
+        MPI.COMM_WORLD.Barrier()
 
         
 def worker():
     hostname = gethostname()
+    MPI.COMM_WORLD.Barrier()
     MPI.COMM_WORLD.send({'ready'}, dest=0)
     while True:
         received = MPI.COMM_WORLD.recv(source=0)
@@ -84,6 +87,7 @@ def worker():
         elif 'stop' in received:
             break
         time.sleep(1)
+    MPI.COMM_WORLD.Barrier()
 
 
 
