@@ -29,6 +29,6 @@ This is being developed to screen potential drugs on Cal Poly's MPAC and DIRAC c
 
 ## Running directly with mpiexec
 
-`mpiexec -n 4 python3.4 test.py`
+`mpiexec -n 4 python3.4 command_distributor.py`
 
-`mpiexec --mca btl_tcp_if_include ens6f0 --prefix /usr/lib64/openmpi --hostfile <hostfile> python3.4 test.py commands.txt`
+`mpiexec --mca btl_tcp_if_include ens6f0 --prefix /usr/lib64/openmpi --hostfile <hostfile> python3.4 command_distributor.py commands.txt`
