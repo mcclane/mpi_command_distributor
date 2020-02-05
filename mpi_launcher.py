@@ -6,7 +6,7 @@ import glob
 import argparse
 import pathlib
 from yaml import load
-from mpi_utils import get_reachable_nodes
+from .mpi_utils import get_reachable_nodes
 
 
 def main():
