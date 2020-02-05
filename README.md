@@ -2,7 +2,7 @@
 
 Distributes commands in chunks to be run on an MPI implementing cluster and retrieves the return codes of the commands. This is intended to be simple and generic.
 
-Some general MPI patterns and code was adapted from [a capstone project that does the same thing](https://github.com/lrbrantley/MPiDock)
+Some general MPI patterns and code were adapted from [a capstone project that does the same thing](https://github.com/lrbrantley/MPiDock)
 
 
 ## Why?
