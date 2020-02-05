@@ -6,6 +6,7 @@ hosts:
     - 127x13.csc.calpoly.edu
     - 127x12.csc.calpoly.edu
     - 127x10.csc.calpoly.edu
+    - csc302x02.csc.calpoly.edu
 
 processes-per-node: 2
 

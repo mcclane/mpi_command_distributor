@@ -48,7 +48,8 @@ class Manager:
             nextline = command_file.readline()
             while nextline:
                 received = MPI.COMM_WORLD.recv(status=status)
-                print("received ", received, "from", status.Get_source())
+                if 'ready' in received:
+                    print("Worker ready:", status.Get_source())
                 if 'return_codes' in received:
                     self.process_return_codes(received)
 
@@ -88,7 +89,6 @@ def worker():
             break
         time.sleep(1)
     MPI.COMM_WORLD.Barrier()
-
 
 
 if __name__ == '__main__':

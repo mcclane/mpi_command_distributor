@@ -30,8 +30,6 @@ def main():
 
 
 def get_alive_nodes(possible_nodes):
-    print("Checking possible nodes:", possible_nodes)        
-        
     alive_nodes = list()
     for node in possible_nodes:
         cmd = ['ping', '-c 1', node]
@@ -44,6 +42,21 @@ def get_alive_nodes(possible_nodes):
             alive_nodes.append(node)
 
     return alive_nodes
+
+def get_reachable_nodes(possible_nodes):
+    reachable_nodes = []
+    alive_nodes = get_alive_nodes(possible_nodes)
+    for node in alive_nodes:
+        cmd = ['ssh', node, 'date']
+        val = 0
+        try:
+            val = subprocess.check_output(cmd)
+        except subprocess.CalledProcessError as e:
+            continue
+        if val:
+            reachable_nodes.append(node)
+
+    return reachable_nodes
 
 
 def setup_ssh(alive_nodes):
