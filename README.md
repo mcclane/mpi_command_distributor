@@ -5,8 +5,7 @@ Distributes commands in chunks to be run on an MPI implementing cluster and retr
 
 ## Why?
 
-This is being developed to screen potential drugs on Cal Poly's MPAC and DIRAC clusters. Some code and general MPI patterns were adapted from [a previous capstone project](https://github.com/lrbrantley/MPiDock)
-
+Not really sure, but it will probably become useful at some point.
 
 ## Requirements
 
